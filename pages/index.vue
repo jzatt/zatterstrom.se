@@ -6,7 +6,7 @@
       </div>
       <div class="scene-text">
         <h1 class="title">Johan Zätterström</h1>
-        <h3 class="subtitle">*.{ js, vue, html, php, css, scss, sketch, psd }</h3>
+        <h3 class="subtitle"><span id="typed" /></h3>
       </div>
     </div>
     <div class="footer">
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import NTyped from 'native-typed'
+
 export default {
   computed: {
     dayMode() {
@@ -27,6 +29,25 @@ export default {
     iconClass() {
       return this.dayMode === 'day' ? 'fa-sun' : 'fa-moon'
     }
+  },
+  mounted() {
+    new NTyped(document.querySelector('#typed'), {
+      strings: [
+        'Frontend',
+        '*.{js, vue}',
+        '*.{html, php}',
+        '*.{css, scss}',
+        '*.{sketch, psd, ai, indd}',
+        'WordPress'
+      ],
+      typeSpeed: 50,
+      backDelay: 1000,
+      deleteSpeed: 15,
+      loop: true,
+      classes: {
+        cursor: 'typed-cursor'
+      }
+    })
   }
 }
 </script>

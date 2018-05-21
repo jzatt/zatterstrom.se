@@ -21,7 +21,7 @@ $red: rgba(207, 82, 82, 1);
   color: $light;
   background: linear-gradient(180deg, lighten($dark, 25%) 0%, darken($dark, 5%) 100%);
   background-size: 200% 200%;
-  animation: bg-move 10s infinite ease;
+  animation: bg-move 15s infinite ease;
 
   &-text {
     margin: 0 auto;
@@ -42,7 +42,7 @@ $red: rgba(207, 82, 82, 1);
     font-family: 'Amatic SC', cursive;
     font-size: 15vw;
     line-height: 1.2;
-    animation: text-move 10s infinite ease;
+    animation: text-move 15s infinite ease;
 
     @media (min-width: 600px) {
       font-size: 10vw;
@@ -50,9 +50,12 @@ $red: rgba(207, 82, 82, 1);
   }
 
   .subtitle {
+    padding: 0.75em;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 1rem;
+    text-align: left;
+    background: rgba($dark, 0.2);
   }
 }
 
@@ -81,6 +84,17 @@ $red: rgba(207, 82, 82, 1);
   }
 }
 
+.typed-cursor {
+  opacity: 0.8;
+  animation: blink 750ms infinite;
+}
+ 
+@keyframes blink {
+  0%   { opacity: 0.8; }
+  50%  { opacity: 0; }
+  100% { opacity: 0.8; }
+}
+
 @keyframes bg-move {
   0% { background-position: 50% 0%; }
   50% { background-position: 50% 100%; }
@@ -88,7 +102,7 @@ $red: rgba(207, 82, 82, 1);
 }
 
 @keyframes text-move {
-  0% { transform: translateY(-4vh); }
-  50% { transform: translateY(-2vh); }
-  100% { transform: translateY(-4vh); } 
+  0% { transform: translateY(-2vh); }
+  50% { transform: translateY(0vh); }
+  100% { transform: translateY(-2vh); } 
 }
