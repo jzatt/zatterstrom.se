@@ -15,10 +15,19 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
     ]
   },
+  modules: [
+    // Google Analytics
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-94100661-1'
+    }]
+  ],
   /*
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
+  /*
+  ** Mode
+  */
   mode: 'spa',
   /*
   ** Build configuration
