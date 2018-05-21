@@ -20,7 +20,6 @@ export default {
   computed: {
     dayMode() {
       const currentHour = new Date().getHours()
-      console.log('Hour now: ' + currentHour)
       return (currentHour < 19 && currentHour > 7) ? 'day' : 'night'
     },
     iconClass() {
