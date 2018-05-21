@@ -22,7 +22,7 @@ export default {
   computed: {
     dayMode() {
       const currentHour = new Date().getHours()
-      return currentHour < 24 && currentHour > 7 ? 'day' : 'night'
+      return currentHour < 19 && currentHour > 7 ? 'day' : 'night'
     },
     iconClass() {
       return this.dayMode === 'day' ? 'fa-sun' : 'fa-moon'
