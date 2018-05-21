@@ -1,0 +1,94 @@
+$light: rgba(242, 238, 233, 1);
+$dark: rgba(38, 50, 57, 1);
+$yellow: rgba(234, 177, 55, 1);
+$red: rgba(207, 82, 82, 1);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  align-content: center;
+  text-align: center;
+}
+
+.scene {
+  flex: 1 0 auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  color: $light;
+  background: linear-gradient(180deg, lighten($dark, 25%) 0%, darken($dark, 5%) 100%);
+  background-size: 200% 200%;
+  animation: bg-move 10s infinite ease;
+
+  &-text {
+    margin: 0 auto;
+    padding: 1rem 0.5%;
+    transform: translateY(-2vh);
+  }
+
+  &-gfx {
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    animation: a 10s infinite ease;
+  }
+
+  .title {
+    font-family: 'Amatic SC', cursive;
+    font-size: 15vw;
+    line-height: 1.2;
+    animation: text-move 10s infinite ease;
+
+    @media (min-width: 600px) {
+      font-size: 10vw;
+    }
+  }
+
+  .subtitle {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}
+
+.icon {
+  font-size: 14rem;
+  color: $yellow;
+  animation: a 20s infinite linear;
+  text-shadow: 0 0 40px lighten($dark, 25%);
+}
+
+.footer {
+  flex: none;
+  padding: 1.5rem 0.5% 1rem;
+  background: linear-gradient(180deg, darken($dark, 4%) 0%, $dark 100%);
+
+  a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    font-size: 3rem;
+    color: $yellow;
+    transition: all 300ms ease-in-out;
+  }
+
+  a:hover {
+    color: $red;
+  }
+}
+
+@keyframes bg-move {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+@keyframes text-move {
+  0% { transform: translateY(-4vh); }
+  50% { transform: translateY(-2vh); }
+  100% { transform: translateY(-4vh); } 
+}
