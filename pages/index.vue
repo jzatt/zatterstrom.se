@@ -1,9 +1,10 @@
 <template>
-  <main class="container" :class="{ day: dayMode }">
+  <main class="container" :class="dayMode">
     <div class="content">
       <div class="logo">
         <i class="fas fa-spin icon" :class="iconClass"></i>
         <h1>Johan Zätterström</h1>
+        <h3>*.{js,vue,html,php,css,scss,psd,sketch}</h3>
       </div>
       <div class="contact">
         <a href="https://se.linkedin.com/in/zatterstrom" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -19,10 +20,10 @@ export default {
   computed: {
     dayMode() {
       const currentHour = new Date().getHours()
-      return (currentHour < 19 && currentHour > 7)
+      return (currentHour < 19 && currentHour > 7) ? 'day' : 'night'
     },
     iconClass() {
-      return (this.dayMode) ? 'fa-sun' : 'fa-moon'
+      return (this.dayMode === 'day') ? 'fa-sun' : 'fa-moon'
     }
   }
 }
@@ -52,6 +53,12 @@ export default {
   h1 {
     font-family: 'Amatic SC', cursive;
     font-size: 4rem;
+  }
+
+  h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 0.875rem;
   }
 
   .logo {
