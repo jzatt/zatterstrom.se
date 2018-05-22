@@ -1,6 +1,8 @@
-# zatt
+# Zatterstrom.se
 
-> Nuxt.js project
+Realy simple and temporary site for [zatterstrom.se](https://zatterstrom.se)
+
+![Awesome](https://media.giphy.com/media/acj7QJGgBBeUg/giphy.gif)
 
 ## Build Setup
 
