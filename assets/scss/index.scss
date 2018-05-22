@@ -37,26 +37,26 @@ $red: rgba(207, 82, 82, 1);
     height: 150vh;
     animation: a 10s infinite ease;
   }
+}
 
-  .title {
-    font-family: 'Amatic SC', cursive;
-    font-size: 15vw;
-    line-height: 1.2;
-    animation: text-move 15s infinite ease;
+.title {
+  font-family: 'Amatic SC', cursive;
+  font-size: 15vw;
+  line-height: 1.2;
+  animation: text-move 15s infinite ease;
 
-    @media (min-width: 600px) {
-      font-size: 10vw;
-    }
+  @media (min-width: 600px) {
+    font-size: 10vw;
   }
+}
 
-  .subtitle {
-    padding: 0.75em;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 400;
-    font-size: 1rem;
-    text-align: left;
-    background: rgba($dark, 0.2);
-  }
+.subtitle {
+  padding: 0.75em;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: left;
+  background: rgba($dark, 0.2);
 }
 
 .icon {

@@ -1,5 +1,5 @@
 <template>
-  <main :class="dayMode" class="container">
+  <main class="container">
     <div class="scene">
       <div class="scene-gfx">
         <i :class="iconClass" class="fas icon" />
@@ -10,9 +10,9 @@
       </div>
     </div>
     <div class="footer">
-      <a href="https://se.linkedin.com/in/zatterstrom" title="LinkedIn" target="_blank"><i class="fab fa-linkedin" /></a>
-      <a href="https://github.com/jzatt" title="GitHub" target="_blank"><i class="fab fa-github-square" /></a>
-      <a href="mailto:&#106;&#111;&#104;&#097;&#110;&#064;&#122;&#097;&#116;&#116;&#101;&#114;&#115;&#116;&#114;&#111;&#109;&#046;&#115;&#101;" title="E-mail"><i class="fas fa-envelope-square" /></a>
+      <a v-for="(item, title, index) in connect" :key="index" :title="title" :href="item.url">
+        <i :class="item.icon" />
+      </a>
     </div>
   </main>
 </template>
@@ -21,6 +21,32 @@
 import NTyped from 'native-typed'
 
 export default {
+  data() {
+    return {
+      connect: {
+        LinkedIn: {
+          url: 'https://se.linkedin.com/in/zatterstrom',
+          icon: 'fab fa-linkedin'
+        },
+        GitHub: {
+          url: 'https://github.com/jzatt',
+          icon: 'fab fa-github-square'
+        },
+        'E-mail': {
+          url: 'mailto:johan@zatterstrom.se',
+          icon: 'fas fa-envelope-square'
+        }
+      },
+      skills: [
+        'Frontend',
+        '*.{js, vue}',
+        '*.{html, php}',
+        '*.{css, scss}',
+        '*.{sketch, psd, ai, indd}',
+        'WordPress'
+      ]
+    }
+  },
   computed: {
     dayMode() {
       const currentHour = new Date().getHours()
@@ -31,23 +57,20 @@ export default {
     }
   },
   mounted() {
-    new NTyped(document.querySelector('#typed'), {
-      strings: [
-        'Frontend',
-        '*.{js, vue}',
-        '*.{html, php}',
-        '*.{css, scss}',
-        '*.{sketch, psd, ai, indd}',
-        'WordPress'
-      ],
-      typeSpeed: 50,
-      backDelay: 1000,
-      deleteSpeed: 15,
-      loop: true,
-      classes: {
-        cursor: 'typed-cursor'
-      }
-    })
+    this.initTyped()
+  },
+  methods: {
+    initTyped() {
+      new NTyped(document.querySelector('#typed'), {
+        strings: this.skills,
+        typeSpeed: 50,
+        backDelay: 1000,
+        deleteSpeed: 15,
+        classes: {
+          cursor: 'typed-cursor'
+        }
+      })
+    }
   }
 }
 </script>
