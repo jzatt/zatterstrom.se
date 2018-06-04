@@ -25,9 +25,11 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-vue": "^4.5.0",
+    "lodash": "^4.17.10",
     "native-typed": "^1.0.0",
     "node-sass": "^4.9.0",
     "prettier": "^1.12.1",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^7.0.1",
+    "trianglify": "^1.2.0"
   }
 }

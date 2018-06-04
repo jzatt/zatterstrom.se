@@ -1,9 +1,6 @@
 <template>
-  <main class="container">
+  <main :style="{ 'background-image': backgroundPattern }" class="container">
     <div class="scene">
-      <div class="scene-gfx">
-        <i :class="iconClass" class="fas icon" />
-      </div>
       <div class="scene-text">
         <h1 class="title">Johan Zätterström</h1>
         <h3 class="subtitle"><span id="typed" /></h3>
@@ -18,11 +15,15 @@
 </template>
 
 <script>
+import _debounce from 'lodash/debounce'
+import Trianglify from 'trianglify'
 import NTyped from 'native-typed'
 
 export default {
   data() {
     return {
+      windowHeight: 300,
+      windowWidth: 500,
       connect: {
         LinkedIn: {
           url: 'https://se.linkedin.com/in/zatterstrom',
@@ -48,18 +49,34 @@ export default {
     }
   },
   computed: {
-    dayMode() {
-      const currentHour = new Date().getHours()
-      return currentHour < 19 && currentHour > 7 ? 'day' : 'night'
-    },
-    iconClass() {
-      return this.dayMode === 'day' ? 'fa-sun' : 'fa-moon'
+    backgroundPattern() {
+      const pattern = Trianglify({
+        width: this.windowWidth,
+        height: this.windowHeight,
+        cell_size: Math.floor(Math.random() * 100) + 40,
+        variance: 0.65,
+        x_colors: 'YlGnBu'
+      }).png()
+
+      return (
+        'url(data:image/png;base64,' +
+        pattern.substr(pattern.indexOf('base64') + 7) +
+        ')'
+      )
     }
+  },
+  created() {
+    this.getWindowSize()
+    window.addEventListener('resize', _debounce(this.getWindowSize, 150))
   },
   mounted() {
     this.initTyped()
   },
   methods: {
+    getWindowSize() {
+      this.windowHeight = window.innerHeight
+      this.windowWidth = window.innerWidth
+    },
     initTyped() {
       new NTyped(document.querySelector('#typed'), {
         strings: this.skills,
