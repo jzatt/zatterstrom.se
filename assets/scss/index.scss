@@ -1,7 +1,5 @@
 $light: rgba(242, 238, 233, 1);
 $dark: rgba(38, 50, 57, 1);
-$yellow: rgba(234, 177, 55, 1);
-$red: rgba(207, 82, 82, 1);
 
 .container {
   display: flex;
@@ -19,23 +17,11 @@ $red: rgba(207, 82, 82, 1);
   position: relative;
   align-items: center;
   color: $light;
-  background: linear-gradient(180deg, lighten($dark, 25%) 0%, darken($dark, 5%) 100%);
-  background-size: 200% 200%;
-  animation: bg-move 15s infinite ease;
 
   &-text {
     margin: 0 auto;
     padding: 1rem 0.5%;
     transform: translateY(-2vh);
-  }
-
-  &-gfx {
-    position: absolute;
-    top: 8vh;
-    left: 0;
-    width: 100%;
-    height: 150vh;
-    animation: a 10s infinite ease;
   }
 }
 
@@ -43,7 +29,6 @@ $red: rgba(207, 82, 82, 1);
   font-family: 'Amatic SC', cursive;
   font-size: 15vw;
   line-height: 1.2;
-  animation: text-move 15s infinite ease;
 
   @media (min-width: 600px) {
     font-size: 10vw;
@@ -59,28 +44,20 @@ $red: rgba(207, 82, 82, 1);
   background: rgba($dark, 0.2);
 }
 
-.icon {
-  font-size: 14rem;
-  color: $yellow;
-  animation: a 20s infinite linear;
-  text-shadow: 0 0 40px lighten($dark, 25%);
-}
-
 .footer {
   flex: none;
   padding: 1.5rem 0.5% 1rem;
-  background: linear-gradient(180deg, darken($dark, 4%) 0%, $dark 100%);
 
   a {
     display: inline-block;
     margin: 0 0.5rem;
     font-size: 3rem;
-    color: $yellow;
+    color: $light;
     transition: all 300ms ease-in-out;
   }
 
   a:hover {
-    color: $red;
+    color: $dark;
   }
 }
 
@@ -93,16 +70,4 @@ $red: rgba(207, 82, 82, 1);
   0%   { opacity: 0.8; }
   50%  { opacity: 0; }
   100% { opacity: 0.8; }
-}
-
-@keyframes bg-move {
-  0% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
-  100% { background-position: 50% 0%; }
-}
-
-@keyframes text-move {
-  0% { transform: translateY(-2vh); }
-  50% { transform: translateY(0vh); }
-  100% { transform: translateY(-2vh); } 
 }
