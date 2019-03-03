@@ -2,12 +2,21 @@
   <main :style="{ 'background-image': backgroundPattern }" class="container">
     <div class="scene">
       <div class="scene-text">
-        <h1 class="title">Johan Zätterström</h1>
-        <h3 class="subtitle"><span id="typed" /></h3>
+        <h1 class="title">
+          Johan Zätterström
+        </h1>
+        <h3 class="subtitle">
+          <span id="typed" />
+        </h3>
       </div>
     </div>
     <div class="footer">
-      <a v-for="(item, title, index) in connect" :key="index" :title="title" :href="item.url">
+      <a
+        v-for="(item, title, index) in connect"
+        :key="index"
+        :title="title"
+        :href="item.url"
+      >
         <i :class="item.icon" />
       </a>
     </div>
@@ -40,7 +49,7 @@ export default {
       },
       skills: [
         'Frontend',
-        '*.{js, vue}',
+        '*.{js, ts, vue}',
         '*.{html, php}',
         '*.{css, scss}',
         '*.{sketch, psd, ai, indd}',
