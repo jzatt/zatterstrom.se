@@ -94,8 +94,8 @@ export default class App extends Vue {
       strings: [
         'Frontend',
         '*.{js, ts, vue}',
-        '*.{html, php}',
         '*.{css, scss}',
+        'Git, NPM',
         '*.{sketch, psd, ai, indd}',
         'WordPress',
       ],
