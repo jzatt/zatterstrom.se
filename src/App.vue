@@ -59,15 +59,6 @@ export default class App extends Vue {
     },
   }
 
-  skills: [
-    'Frontend',
-    '*.{js, ts, vue}',
-    '*.{html, php}',
-    '*.{css, scss}',
-    '*.{sketch, psd, ai, indd}',
-    'WordPress',
-  ]
-
   created() {
     this.getWindowSize()
     window.addEventListener('resize', _debounce(this.getWindowSize, 150))
