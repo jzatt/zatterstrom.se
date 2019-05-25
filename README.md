@@ -1,24 +1,20 @@
 # Zatterstrom.se
 
-Realy simple and temporary site for [zatterstrom.se](https://zatterstrom.se)
+Realy simple ~~and temporary~~ site for [zatterstrom.se](https://zatterstrom.se)
 
 ![Awesome](https://media.giphy.com/media/acj7QJGgBBeUg/giphy.gif)
 
 ## Build Setup
 
+Builds with [Parcel JS](https://parceljs.org/)
+
 ``` bash
 # install dependencies
-$ npm install # Or yarn install
+$ npm install
 
-# serve with hot reload at localhost:3000
+# hot reload dev mode
 $ npm run dev
 
-# build for production and launch server
+# build for production
 $ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
 ```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

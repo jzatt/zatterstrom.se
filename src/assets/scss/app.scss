@@ -1,6 +1,8 @@
 $light: rgba(242, 238, 233, 1);
 $dark: rgba(38, 50, 57, 1);
 
+@import '../node_modules/normalize-css/normalize.css';
+
 .container {
   display: flex;
   flex-direction: column;
