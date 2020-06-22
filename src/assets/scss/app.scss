@@ -1,7 +1,25 @@
 $light: rgba(242, 238, 233, 1);
 $dark: rgba(38, 50, 57, 1);
 
-@import '../node_modules/normalize-css/normalize.css';
+@import '../../../node_modules/normalize-css/normalize.css';
+
+body {
+  background: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);
+  background-size: 200%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 .container {
   display: flex;
@@ -31,6 +49,7 @@ $dark: rgba(38, 50, 57, 1);
   font-family: 'Amatic SC', cursive;
   font-size: 15vw;
   line-height: 1.2;
+  text-shadow: 0 0.02em 0.02em rgba($dark, 0.2);
 
   @media (min-width: 600px) {
     font-size: 10vw;
@@ -59,7 +78,7 @@ $dark: rgba(38, 50, 57, 1);
   }
 
   a:hover {
-    color: $dark;
+    color: #fe5f75;
   }
 }
 
