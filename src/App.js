@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react';
-import NTyped from 'native-typed'
+import NTyped from 'native-typed';
 
 const App = () => {
-  useEffect(() => {
-    initTyped();
-    console.log('You looking for errors ey? ;)');
-  }, []);
-
   const connect = [
     {
       name: 'LinkedIn',
       url: 'https://se.linkedin.com/in/zatterstrom',
       icon: 'fab fa-linkedin',
     },
-    { name: 'GitHub',
+    {
+      name: 'GitHub',
       url: 'https://github.com/jzatt',
       icon: 'fab fa-github-square',
     },
@@ -36,6 +32,10 @@ const App = () => {
       }
     });
   };
+
+  useEffect(() => {
+    initTyped();
+  }, []);
   
   return (
     <main className="container">
