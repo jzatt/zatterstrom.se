@@ -1,4 +1,5 @@
 import { Linkedin, Github } from 'lucide-react';
+import * as classes from './index.module.scss';
 
 const App = () => {
   const connect = [
@@ -15,14 +16,18 @@ const App = () => {
   ];
 
   return (
-    <main className="App">
-      <h1>Johan Zätterström</h1>
+    <main className={classes.app}>
       <div>
-        {connect.map((social) => (
-          <a key={social.name} title={social.name} href={social.url}>
-            <social.Icon />
-          </a>
-        ))}
+        <h1>
+          Johan <span>Zätterström</span>
+        </h1>
+        <div className={classes.social}>
+          {connect.map((social) => (
+            <a key={social.name} title={social.name} href={social.url}>
+              <social.Icon size={52} />
+            </a>
+          ))}
+        </div>
       </div>
     </main>
   );
