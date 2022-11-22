@@ -1,6 +1,6 @@
 # Zatterstrom.se
 
-Realy simple ~~and temporary~~ site for [zatterstrom.se](https://zatterstrom.se)
+Really simple ~~and temporary~~ site for [zatterstrom.se](https://zatterstrom.se)
 
 ![Awesome](https://media.giphy.com/media/acj7QJGgBBeUg/giphy.gif)
 
@@ -8,12 +8,12 @@ Realy simple ~~and temporary~~ site for [zatterstrom.se](https://zatterstrom.se)
 
 Builds with [Parcel JS](https://parceljs.org/)
 
-``` bash
+```bash
 # install dependencies
 $ npm install
 
 # hot reload dev mode
-$ npm run dev
+$ npm run start
 
 # build for production
 $ npm run build
